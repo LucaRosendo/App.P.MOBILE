@@ -22,6 +22,7 @@ class _PaginaInicial extends State<PaginaInicial>{
     titlo: 'Mapas mentais',
   );
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,10 +41,19 @@ class _PaginaInicial extends State<PaginaInicial>{
           ),
           textAlign: TextAlign.center,
         ),
-
         buildField('Resumo'),
         buildField('Exercício'),
         buildField('Mapas mentais'),
+
+        Container(
+          height: 250,
+          margin: const EdgeInsets.fromLTRB(10, 16, 10, 15),
+          padding: const EdgeInsets.all(6),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Image.network('https://www.oetker.com.br/receita/r/bolo-com-recheio-de-leite-em-po'),
+        )
       ],
     );
   }
@@ -65,9 +75,9 @@ buildField(String text){
         ),
         child: Row(
           children: [
-            Icon(Icons.menu_book),
+            const Icon(Icons.menu_book),
             Padding(
-              padding: EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.only(left: 10),
               child: Text(text,
               style: const TextStyle(
                 fontSize: 20,
