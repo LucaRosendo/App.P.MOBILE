@@ -1,6 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/paginas_temp/exerc%C3%ADcio.dart';
+import 'package:untitled/paginas_temp/mapas_mentais.dart';
+import 'package:untitled/paginas_temp/resumo.dart';
 import 'desc_pag.dart';
 
 class PaginaInicial extends StatefulWidget{
@@ -71,9 +74,45 @@ class _PaginaInicial extends State<PaginaInicial>{
           ),
           textAlign: TextAlign.center,
         ),
-        buildField('Resumo'),
-        buildField('Exercício'),
-        buildField('Mapas mentais'),
+        InkWell(
+          onTap: () {
+             Navigator.push(
+              context,
+              MaterialPageRoute(
+              builder: (context) {
+                return Resumo();
+                },
+              ),
+             );
+        },
+        child: buildField('Resumo'),
+        ),
+        InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return Exercicios();
+                },
+              ),
+            );
+          },
+          child: buildField('Exercício'),
+        ),
+        InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return MapasMentais();
+                },
+              ),
+            );
+          },
+          child:  buildField('Mapas mentais'),
+        ),
         Container(
           height: 250,
           margin: const EdgeInsets.fromLTRB(10, 16, 10, 15),
